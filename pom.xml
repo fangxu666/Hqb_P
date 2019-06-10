@@ -18,6 +18,7 @@
     <modules>
         <module>Hqb_App</module>
         <module>Hqb_Services</module>
+        <module>Hqb_Euraka</module>
         <module>Hqb_Common</module>
     </modules>
 
@@ -54,33 +55,25 @@
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
     </dependencies>
 
-    <profiles>
-        <!-- 默认开发环境 -->
-        <!--<profile>
-            &lt;!&ndash;id唯一，不能有重复的&ndash;&gt;
-            <id>dev</id>
-            &lt;!&ndash;配置&ndash;&gt;
-            <properties>
-                &lt;!&ndash; 环境标识，需要与配置文件的名称相对应 &ndash;&gt;
-                <activatedProperties>dev</activatedProperties>
-            </properties>
-            <activation>
-                &lt;!&ndash;默认环境，如果设置了这个，则项目运行默认使用这个profile的配置&ndash;&gt;
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>-->
-        <!-- 生产环境 -->
-        <profile>
-            <id>test</id>
-            <properties>
-                <activatedProperties>test</activatedProperties>
-            </properties>
-            <activation>
-                <!--默认环境，如果设置了这个，则项目运行默认使用这个profile的配置-->
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
+    <!-- 使用dependencyManagement进行版本管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>

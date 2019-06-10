@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Hqb_App" />
         <module name="Hqb_Common" />
+        <module name="Hqb_Euraka" />
         <module name="Hqb_Services" />
       </profile>
     </annotationProcessing>
