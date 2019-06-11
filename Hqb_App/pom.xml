@@ -25,16 +25,6 @@
     </dependencies>
 
     <build>
-        <finalName>microservicecloud</finalName>
-        <resources>
-            <resource>
-                <!-- 允许访问src/main/resources下的内容 -->
-                <directory>src/main/resources</directory>
-                <!-- 过滤开启 -->
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
         <!-- 子模块中添加打包插件，这个插件主要是构建可执行的jar -->
         <plugins>
             <plugin>

@@ -17,7 +17,7 @@
 
     <modules>
         <module>Hqb_App</module>
-        <module>Hqb_Services</module>
+        <module>Hqb_ManagerServices</module>
         <module>Hqb_Euraka</module>
         <module>Hqb_Common</module>
     </modules>
@@ -76,4 +76,24 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--<build>
+        <finalName>hf_hqb_services</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>-->
 </project>

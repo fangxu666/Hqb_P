@@ -6,11 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Hqb_App" />
-        <module name="Hqb_Common" />
-        <module name="Hqb_Euraka" />
-        <module name="Hqb_Services" />
+        <module name="hf_hqb_app" />
+        <module name="hf_hqb_common" />
+        <module name="hf_hqb_euraka" />
+        <module name="hf_hqb_manager_services" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Hqb_App" target="1.8" />
+      <module name="Hqb_Common" target="1.8" />
+      <module name="Hqb_Euraka" target="1.8" />
+      <module name="Hqb_ManagerServices" target="1.8" />
+      <module name="Hqb_P" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
