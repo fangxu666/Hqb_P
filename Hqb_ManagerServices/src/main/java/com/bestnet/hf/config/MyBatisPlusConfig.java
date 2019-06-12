@@ -1,6 +1,8 @@
 package com.bestnet.hf.config;
 
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
+import com.baomidou.mybatisplus.plugins.pagination.PageHelper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,15 @@ public class MyBatisPlusConfig {
     // mybatis-plus分页插件
     @Bean
     public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
+        PaginationInterceptor page = new PaginationInterceptor();
+        page.setDialectType("mysql");
+        return page;
+    }
+
+    @Bean
+    public PerformanceInterceptor performanceInterceptor() {
+        PerformanceInterceptor page = new PerformanceInterceptor();
+        page.setFormat(true);
+        return page;
     }
 }
