@@ -1,6 +1,5 @@
 package com.bestnet.hf.services;
 
-import com.baomidou.mybatisplus.plugins.Page;
 import com.bestnet.hf.bean.UserDemoBean;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

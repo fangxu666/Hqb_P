@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //Eureka客户端 消费者
@@ -13,6 +14,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //服务发现
 @EnableFeignClients
 @EnableDiscoveryClient
+//开启redis session支持,并配置session过期时间
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds= 12000)
 public class HfHqbAppApplication {
 
     public static void main(String[] args) {
