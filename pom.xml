@@ -18,6 +18,7 @@
     <modules>
         <module>Hqb_App</module>
         <module>Hqb_ManagerServices</module>
+        <module>Hqb_PayServices</module>
         <module>Hqb_Euraka</module>
         <module>Hqb_Common</module>
     </modules>

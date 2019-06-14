@@ -21,7 +21,7 @@ public class Demo2ServiceImp implements Demo2Service {
 
     @RequestMapping("/addUserDemo")
     public Integer addUserDemo(@RequestBody UserDemoBean userDemoBean) {
-        System.out.println("In ManagerServices,addUserDemo...");
+        System.out.println("In PayServices,addUserDemo...");
         return demoMapper.insert(userDemoBean);
     }
 
