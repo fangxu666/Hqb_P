@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录</title>
+   <meta charset="utf-8"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut  icon" type="../image/x-icon" href="images/etsIco.ico" media="screen" />
+  <link rel="stylesheet" href="css/layui.css"  media="all">
+  <link rel="stylesheet" type="text/css" href="css/verify.css">
+  <style type="text/css">
+  	body,html{
+  		height: 100%;
+  		min-width: 1000px;
+  		color: #fffff;
+  	}
+  	.logo{
+  		
+      height: 70px;
+      width: 100%;
+      background-color: #fff;
+  	}
+  	.logo span{
+	    left: 30px;
+      position: absolute;
+      height: 60px;
+      width: 110px;
+      top: 0px;
+  	}
+  	.logo img{
+  		 position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  	}
+  	.logo .logo_txt{
+          position: absolute;
+      left: 150px;
+      top: 18px;
+      font-size: 26px;
+      width: 185px;
+    }
+  	.write{
+  		color: #FFFFFF;
+  	}
+  	.layui-form-item{
+  		margin-bottom: 30px;
+  	}
+   .layui-form-item{
+   		padding: 0px 20px 0 0;
+   		margin-left: -85px;
+   }
+   #layui-form{
+     /* box-shadow: 6px 6px 15px #666;*/
+      height: 400px;
+      width: 320px;
+      /*background-color:rgba(255,255,255,0.4);*/
+     background-color:rgba(41,63,123,0.4);
+      border-radius: 50px;
+      padding: 10px;
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #FFFFFF;
+   }
+   .alignRight{
+    text-align: right;
+   }
+   .alignRight a{
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: underline;
+   }
+   #mpanel1{
+    margin-left: 110px;
+  }
+  .verify-bar-area .verify-msg{
+    text-indent: 2em;
+  }
+  </style>
+</head>
+<body>
+<div class="logo">
+	<span><img src="images/logo/logo.png"/></span>
+	<span class="logo_txt">小汇智慧后勤</span>
+</div>
+<div style="background:linear-gradient(120deg, #5d80fe, #55c8ff); height: 80%;  margin-top:10px; background-size: 100% 100%;">
+	  <div style="position: absolute; left: 100px; top: 170px;"><img src="images/bg.png"></div>
+		<form class="layui-form" action="loginin" method="post" lay-filter="example" id="layui-form">
+		<h2 class="write" style="text-align: center; padding-top: 25px;">小汇智慧后勤</h2>
+	  <div class="layui-form-item" style="margin-top:50px ;">
+	   <!-- <label class="layui-form-label write">用户名</label>-->
+	    <div class="layui-input-block">
+	      <input type="text" name="username" lay-verify="required|username" autocomplete="off" placeholder="请输入用户名" maxlength="17" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	   <!-- <label class="layui-form-label write">密码</label>-->
+	    <div class="layui-input-block">
+	      <input type="password" name="password" lay-verify="required|pass"  placeholder="请输入密码" maxlength="16" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	   <div id="mpanel1"></div>
+	  </div>
+	 
+	  <div class="layui-form-item">
+	    <div class="layui-input-block">
+	      <button type="button" class="layui-btn" lay-submit="" lay-filter="loginBtn" style="width:275px; background-color: #42b3ff;" id="loginBtn">登录</button>
+	      <div class="alignRight">
+         <a href="register.html">去注册</a> 
+        </div>
+      </div>
+	  </div>
+	
+	</form>
+	 
+</div>
+ <div class="bottom" style="position: fixed;bottom:10px;left: 0;width: 100%;text-align: center;">
+	<span style="color: #333333;font-size: 14px;">技术支持：<a href="http://www.etslink.cn/" target="_blank">安徽易龙网络服务有限公司</a></span>
+</div>
+<script src="layui.all.js" charset="utf-8"></script>
+<script src="js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/verify.js" ></script>
+<script type="text/javascript" src="js/common.js" ></script>
+<script type="text/javascript">
+//主动加载jquery模块
+var flag = "";
+layui.use(['jquery', 'layer'], function(){ 
+  var $ = layui.jquery //重点处
+  ,layer = layui.layer;
+	layui.use(['form', 'layedit', 'laydate'], function(){
+		var form = layui.form
+		,layer = layui.layer;
+		$("body").keydown(function () {
+      var thEvent = window.event || arguments.callee.caller.arguments[0];
+      if (thEvent.keyCode == "13") {
+       	$("#loginBtn").click(); 
+      }
+      if(event.keyCode==32){ return false}
+ 		});
+	  //监听提交
+	  form.on('submit(loginBtn)', function(data){
+        if(flag){//用于表单验证是否已经滑动成功
+         $('.layui-form').submit();
+		      console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+        }else{
+          layer.msg("请先通过滑块验证");
+        }
+		  //以下是登录的ajax，为了演示需要注释了~
+	   /* $.ajax({
+			  type: 'POST',
+			  data:data.field,//登录入参
+			  url: "url",//登录接口		  
+			  dataType: JSON, 
+			  success: function(data){
+			    layer.msg('登录成功！', {icon:6,time:1500},function(){//登陆成功跳转到主页
+						window.location.href='index.html'; 
+					});
+				},
+			  error:function(e){
+			  	layer.msg('系统异常，请稍后重试！', {icon: 5, anim: 6,time:1500});
+			  }
+			});*/
+			/*layer.msg('登录成功！', {icon:6,time:1500},function(){
+				window.location.href='index.html'; 
+			});*/
+	  });
+	});
+});  
+
+$(function () {
+  //滑动验证
+    $('#mpanel1').slideVerify({
+        type : 1,   //类型
+        vOffset : 5,  //误差量，根据需求自行调整
+        barSize : {
+          width : '275px',
+          height : '40px',
+        },
+        ready : function() {
+      },
+        success : function() {
+          flag = true;
+        },
+        // error : function() {
+        //  alert('验证失败！');
+        // }
+        
+    });
+})
+</script>
+</body>
+</html>

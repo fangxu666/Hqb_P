@@ -1,0 +1,356 @@
+/*
+* @Author: zz
+* @Date:   2019-04-16 
+* 
+*/
+html,body{
+	height: 100%;
+	color: #666666;
+}
+*{
+  	padding: 0;
+  	margin: 0;
+ }
+  textarea{resize: none;}
+  .layui-table-cell{
+  	padding: 0;
+  	text-align: center;
+  }
+  .layui-form-pane .layui-form-label{
+  	width: auto;
+  }
+  .layui-input-inline{
+  	width: 150px;
+  }
+ .layui-table, .layui-table-view {
+    margin: 5px 0;
+}
+.layui-form .layui-form-item{
+	padding: 0 49px 0 0;
+  }
+  .left_{
+  	left: 149px;
+  }
+   /* for Chrome */
+/*.tablebox::-webkit-scrollbar {
+    display: none;
+}*/
+.tableHtml{padding: 5px 10px 0 10px;}
+  #treeBox{
+  	display: inline-block;
+  	width:240px;
+  	position:absolute;
+  	left: 0;
+  }
+  #treeBox .treename{
+  	margin-top: 10px;
+    text-align: center;
+    width: 100%;
+   /* white-space: nowrap;
+    transform: translateX(-50%);*/
+   
+  }
+  #treeBox .treename span{
+  	font-size: 14px;
+  	font-weight: bold;
+    display: inline-block;
+    font-weight: normal;
+    margin-top:5px ;
+   /* white-space: nowrap;
+    transform: translateX(-50%);*/
+   
+  }
+/*  #xtree{
+  	width:200px;
+  	position: absolute;
+  	top: 48px;
+  	overflow:auto;
+  	white-space: nowrap;
+  	display:-webkit-box;
+  	display:-ms-box;
+  	display:-moz-box-box;
+  }*/
+  #tree{
+  	width:200px;
+  	position: absolute;
+  	top: 48px;
+  	overflow:auto;
+  	display:-webkit-box;
+  	display:-ms-box;
+  	display:-moz-box-box;
+  }
+  #tree ul{
+  	float:none;
+  }
+  .layui-tree li{
+  	overflow: visible;
+  }
+  .layui-input{
+  	width:185px ;
+  	margin-left:0;	
+  }
+  /*顶部input框固定长度*/
+  .layui-input_{
+  	width:160px ;
+  }
+  .top-btn .layui-btn{
+  	padding: 0 15px;
+  }
+      
+  .layui-btns{
+  	/*position: relative;
+  	margin-left: 4px;*/
+
+  }
+  .top-btn{
+  	position: relative;
+  	width: 100%;
+  	min-width:520px;
+  	top: 3px;
+  	overflow:visible;
+  	height: 38px;
+  /*	display:-webkit-box;*/
+  	
+  }
+ .top-btn .layui-btn+.layui-btn {
+  	    margin-left: 0px;
+  }
+  /*高级搜索*/
+  .search-btn-group{
+  	float: right;
+  }
+  .search-btn-group input{
+  	display: inline-block;
+  }
+  .search-btn-group button{
+  	top: -1px;
+    position: relative;
+  }
+ 
+  #moreBtn{
+  	position: relative;
+  }
+  /*更多操作样式---开始*/
+  #uls{
+  	background: #F2F2F2;
+  	border: 1px solid #C0C4CC;
+  	position: absolute;
+  	z-index: 999;
+  	display: none;
+  	/*box-shadow: -4px 6px 10px #666;*/
+  }
+  #uls li{
+  	height: 38px;
+  	min-width: 70px;
+  	margin-bottom: 2px;
+  	background: #FFFFFF;
+  	text-align: center;
+  	line-height: 40px;
+  	padding: 0 10px;
+  	cursor:pointer
+  }
+  #uls li:hover{
+  	background:#428BCA;
+  	color: #FFFFFF;
+  }
+  
+/*  #uls-arrow{
+  	position: absolute;
+  	z-index: 999;
+  	display: none;
+  }*/
+  /*#uls:after{
+  	content:""; 
+	display:block; 
+	width:0; height:0;
+	position:absolute; 
+	left:31px; 
+	top:-16px;
+	border-left:8px solid transparent;
+	border-right:8px solid transparent; 
+    border-top:8px solid transparent; 
+	border-bottom:8px solid #f2f2f2;
+}
+.uls-40::before {
+	right:40px !important; 
+}
+.uls-47::after {
+	left:47px !important; 
+}
+#uls:before{
+	position:absolute;
+	border-left:9px solid transparent;
+	border-right:9px solid transparent;
+	border-bottom:9px solid #C0C4CC;
+	content:" ";
+	display:block;
+	width:0;
+	height:0;
+	right: 28px;
+	top: -10px;
+}*/
+  /*更多操作样式---结束*/
+  /*高级查询样式-----开始*/
+  #formHtml{
+  	border: 1px solid #C0C4CC;
+  	background: #FFFFFF;
+  	position: absolute;
+  	z-index: 998;
+  	display:none ;
+  	box-shadow: -5px 8px 12px #999;
+  }  
+#formHtml .layui-input{
+  	margin-left:4px;	
+  }
+ #formHtml .layui-form-item{
+ 	margin: 15px -30px 10px 20px;
+ } 
+ #formHtml .layui-form-label{
+ 	padding: 9px 0;
+ 	width:64px;
+ 	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+ #formHtml .layui-form-item .layui-inline {
+    margin-right: 0;
+}
+ #formHtml .layui-input-block {
+ 	margin-left: 200px;
+}
+#formHtml:after{
+	content:""; 
+	display:block; 
+	width:0; height:0;
+	position:absolute; 
+  left:526px; 
+  top:-16px;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent; 
+  border-top:8px solid transparent; 
+  border-bottom:8px solid #FFFFFF;
+}
+#formHtml:before{
+	position:absolute;
+	border-left:9px solid transparent;
+	border-right:9px solid transparent;
+	border-bottom:9px solid #C0C4CC;
+	content:" ";
+	display:block;
+	width:0;
+	height:0;
+    right: 28px;
+    top: -10px;
+}
+ /*高级查询样式-----结束*/
+/*顶部下拉样式*/
+.search-btn-group-box{
+	margin-right: 5px;
+}
+.search-btn-group-box input{
+	width: 150px;
+}
+/*右边弹出层样式--start*/
+.right-layer{
+	background: #FFFFFF;
+	border: 1px solid #C0C4CC;
+	box-shadow: -5px 8px 12px #999;
+	width: 400px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: auto;
+ 	}
+  .right-layer .layui-form-item{
+  	padding: 0;
+  }
+ .right-layer .layui-form-label {
+		white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	width: 70px;
+  	padding: 9px 0;
+ }
+ 
+.right-layer .layui-input {
+	width: 115px;
+	margin-left: 2px;
+}
+.right-layer .layui-form-item .layui-input-inline{
+ 		width: 105px;
+ }
+ .right-layer .layui-form-item .layui-inline{
+ 	margin-right: 0;
+ 	margin-left: 2px;
+ }
+ .right-layer .right-layer-shrink {
+ 	position: absolute;
+    top: 5px;
+    right: 20px;
+ }
+/*右边弹出层样式--end*/
+.layui-layer-content{
+   -webkit-box-shadow: 6px 6px 3px #888888;
+   -moz-box-shadow: 6px 6px 3px #888888;
+   box-shadow: 6px 6px 3px #888888;
+   border: 1px #666 solid; 
+}
+
+.tablebluebg{background-color: rgb(231, 244, 255);}
+/*表格table表头标题加粗*/
+.layui-table-header .layui-table .layui-table-cell span{font-weight: bold !important;color: #000000;}
+.layui-input{color: #666;}
+.minW1000{min-width: 1000px;}
+.minW900{min-width: 900px;}
+.minW800{min-width: 800px;}
+.minW700{min-width: 700px;}
+.minW600{min-width: 600px;}
+.minW500{min-width: 500px;}
+
+/*表报明细的样式*/ 
+#baobiao .inner-body{padding: 0px;}
+#baobiao .rpt-tit{font-size: 30px; height: 60px; line-height: 60px; text-align: center; font-weight: bold; color: #5da5f1; border-bottom: 1px solid #e6e6e6;}
+#baobiao .layui-form-item .layui-form-checkbox[lay-skin=primary]{width: 180px; margin-top: 0px;}
+#baobiao .box{overflow: auto; height: 400px;}
+
+#baobiao .body-left{float: left; background-color: #fff; width: 200px; display:-webkit-box;display:-ms-box;display:-moz-box-box;overflow: auto;}
+#baobiao .body-right{margin-left: 220px; height: 100%; background-color: #fff;}
+#baobiao .body-right2{margin-left: 440px; height: 100%; background-color: #fff;}
+#baobiao .ztree{padding: 10px;}
+#baobiao .box-red{font-size: 14px; font-weight: bold; text-align: center; padding-bottom: 15px; color: red;}
+#baobiao .tableInput td{border: 1px solid #e6e6e6;height: 35px;padding-left: 10px;}
+#baobiao .layui-form-item .layui-form-checkbox{	margin-top: 0px;}
+
+/*导入文件模块*/
+#import .layui-card-header{background-color: #f2f2f2;}
+#import .tableHtml{padding:0px;}
+#import .layui-card{border: 1px solid #e6e6e6;}
+#import .box{overflow: auto; padding: 10px;}
+		
+  			
+/*补助中心模块*/		
+#aid .aid-plan{ line-height: 30px; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-bottom: 15px;}
+#aid .aid-spani{display: inline-block;font-size: 36px; color: #FF5722; margin-right: 10px; padding-top: 5px;}
+#aid .aid-spant{display: inline-block;}
+#aid .layui-card-header{background-color: #f2f2f2;}
+#aid .layui-card{border: 1px solid #e6e6e6;}
+#aid .layui-input-block{margin-left: 0px;}	
+#aid .aid-box{overflow: auto; padding: 10px;}		
+#aid .body-left{float: left; background-color: #fff; width: 200px; display:-webkit-box;display:-ms-box;display:-moz-box-box;overflow: auto;}
+#aid .body-right{margin-left: 220px; height: 100%; background-color: #fff;padding-left: 0px; overflow-x: auto; overflow-y: hidden;}  	
+#aid .tableInput{ margin-left: 180px;}
+#aid .tableInput td{border: 1px solid #e6e6e6;height: 35px;padding-left: 10px;}  		
+  		    
+/*结算中心模块*/  		   
+#jiesuan .jscz-tit{font-size: 30px; line-height: 32px; text-align: center; font-weight: bold; color: #5da5f1; border-bottom: 1px solid #e6e6e6;padding: 30px 0px 20px 0px;}
+#jiesuan .jscz-tit p{font-size: 16px; color: #666; font-weight:200;}
+#jiesuan .box{overflow: auto; padding: 10px;}
+
+/*客户管理模块*/	
+#cust .aid-box{overflow: auto; padding: 10px;}		
+#cust .body-left{float: left; background-color: #fff; width: 200px; display:-webkit-box;display:-ms-box;display:-moz-box-box;overflow: auto;}
+#cust .body-right{margin-left: 220px; height: 100%; background-color: #fff;padding-left: 0px;}
+#cust .layui-form-select{top: 1px;}
+
+
