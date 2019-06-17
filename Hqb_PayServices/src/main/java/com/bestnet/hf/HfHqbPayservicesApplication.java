@@ -1,7 +1,6 @@
 package com.bestnet.hf;
 
 import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -14,10 +13,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableCircuitBreaker
 //开启分布式事务注解
 @EnableDistributedTransaction
-public class HfHqbServicesApplication {
+public class HfHqbPayservicesApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HfHqbServicesApplication.class, args);
+        SpringApplication.run(HfHqbPayservicesApplication.class, args);
     }
 
 }

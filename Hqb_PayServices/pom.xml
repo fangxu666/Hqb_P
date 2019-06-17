@@ -9,10 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bestnet.hf</groupId>
-    <artifactId>hf_hqb_manager_services</artifactId>
-    <version>1.0.1</version>
-    <name>hf_hqb_manager_services</name>
+    <artifactId>hf_hqb_payservices</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>hf_hqb_payservices</name>
     <packaging>jar</packaging>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <!-- 引入公共服务 -->
@@ -79,7 +80,6 @@
             <artifactId>txlcn-txmsg-netty</artifactId>
             <version>5.0.2.RELEASE</version>
         </dependency>
-
     </dependencies>
 
     <build>

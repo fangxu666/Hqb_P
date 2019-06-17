@@ -5,6 +5,7 @@ import com.bestnet.hf.bean.UserDemoBean;
 import com.bestnet.hf.services.Demo2Service;
 import com.bestnet.hf.services.DemoService;
 import com.bestnet.hf.util.RedisUtil;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,6 +63,7 @@ public class DemoController {
 
     //分布式事务测试
     @RequestMapping("/test")
+    @LcnTransaction
     public void addUserBy2Demo(){
         UserDemoBean userDemoBean = new UserDemoBean();
         userDemoBean.setName("李寒蕾");

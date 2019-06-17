@@ -3,10 +3,12 @@ package com.bestnet.hf.services.imp;
 import com.bestnet.hf.bean.UserDemoBean;
 import com.bestnet.hf.mapper.DemoMapper;
 import com.bestnet.hf.services.Demo2Service;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,8 @@ public class Demo2ServiceImp implements Demo2Service {
     private DemoMapper demoMapper;
 
     @RequestMapping("/addUserDemo")
+    @LcnTransaction //分布式事务注解
+    @Transactional //本地事务注解
     public Integer addUserDemo(@RequestBody UserDemoBean userDemoBean) {
         System.out.println("In ManagerServices,addUserDemo...");
         return demoMapper.insert(userDemoBean);
