@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>404</title>
-<link rel="shortcut  icon" type="../image/x-icon" href="images/etsIco.ico" media="screen" />
+<link rel="shortcut  icon" type="../image/x-icon" href="/images/etsIco.ico" media="screen" />
 <style type="text/css">
 	*{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
@@ -27,7 +27,7 @@ body{background: #d2f5f1}
 .tipInfo .in p span a{color:#e94c3c;margin: 0 10px}
 .tipInfo .in .desc{overflow: hidden;font-size: 14px;color: #2b2b2b;padding: 0 10%}
 .tipInfo .in .desc h3{font-weight: normal;padding: 20px 0 5px 0}
-.tipInfo .in .desc li{background: url("../images/404/dot.png") no-repeat left center;margin-left: 5px;padding: 5px 0;padding-left: 8px;*padding-left: 20px;}
+.tipInfo .in .desc li{background: url("/images/404/dot.png") no-repeat left center;margin-left: 5px;padding: 5px 0;padding-left: 8px;*padding-left: 20px;}
 @-webkit-keyframes cloudLarge{0%{right: -140px;}
     100%{right: 118%;}}
 @-moz-keyframes cloudLarge{0%{right: -140px;}
@@ -112,23 +112,23 @@ body{background: #d2f5f1}
 </head>
 <body>
 <div class="mianBox">
-	<img src="images/yun0.png" alt="" class="yun yun0" />
-	<img src="images/yun1.png" alt="" class="yun yun1" />
-	<img src="images/yun2.png" alt="" class="yun yun2" />
-	<img src="images/bird.png" alt="" class="bird" />
-	<img src="images/san.png" alt="" class="san" />
+	<img src="/images/yun0.png" alt="" class="yun yun0" />
+	<img src="/images/yun1.png" alt="" class="yun yun1" />
+	<img src="/images/yun2.png" alt="" class="yun yun2" />
+	<img src="/images/bird.png" alt="" class="bird" />
+	<img src="/images/san.png" alt="" class="san" />
 	<div class="tipInfo">
 		<div class="in">
 			<div class="textThis">
 				<h2>出错啦404！</h2>
-				<p><span>登录页面自动<a id="href" href="login.html">跳转</a></span><span>等待<b id="wait">5</b>秒</span></p>
+				<p><span>登录页面自动<a id="href" href="/login/login">跳转</a></span><span>等待<b id="wait">5</b>秒</span></p>
 				<script type="text/javascript">                            (function() {
 						var wait = document.getElementById('wait'), href = document.getElementById('href').href;
 						var interval = setInterval(function() {
 							var time = --wait.innerHTML;
 							if (time <= 0) {
 								clearInterval(interval);
-								location.href = 'login.html';
+								location.href = '/login/login';
 							}
 							;
 						}, 1000);
@@ -138,8 +138,8 @@ body{background: #d2f5f1}
 		</div>
 	</div>
 </div>
-<script src="layui.all.js"></script>
-<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="/layui.all.js"></script>
+<script src="/js/common.js" type="text/javascript" charset="utf-8"></script>
 <script>
 //主动加载jquery模 块
 layui.use(['jquery', 'layer'], function(){

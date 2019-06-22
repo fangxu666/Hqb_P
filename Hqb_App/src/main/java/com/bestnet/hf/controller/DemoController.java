@@ -1,6 +1,5 @@
 package com.bestnet.hf.controller;
 
-import com.baomidou.mybatisplus.plugins.Page;
 import com.bestnet.hf.bean.UserDemoBean;
 import com.bestnet.hf.services.Demo2Service;
 import com.bestnet.hf.services.DemoService;

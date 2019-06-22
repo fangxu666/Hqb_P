@@ -27,9 +27,10 @@ public class LoginInterceptor implements HandlerInterceptor {
     private static final Logger LOG = LoggerFactory.getLogger(LoginInterceptor.class);
     //验证登陆状态的业务逻辑
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        LOG.info("拦截请求的路径："+request.getRequestURI());
         Object obj = redisUtil.get(request.getSession().getId());
         if (obj == null){
-            response.sendRedirect("");
+            response.sendRedirect("/login/sessionLoss");
             return false;
         }else{
             return true;    //如果session里有user，表示该用户已经登陆，放行，用户即可继续调用自己需要的接口

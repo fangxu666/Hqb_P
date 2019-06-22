@@ -15,6 +15,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!-- 引入公共服务 -->
         <dependency>
             <groupId>com.bestnet.hf</groupId>
@@ -31,7 +35,6 @@
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
         </dependency>
-
         <!-- txlcn依赖 -->
         <dependency>
             <groupId>com.codingapi.txlcn</groupId>
@@ -50,6 +53,13 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional=true，依赖不会传递，该项目依赖devtools -->
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -58,6 +68,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--配置devtools-->
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -10,6 +10,7 @@
         <module name="hf_hqb_common" />
         <module name="hf_hqb_euraka" />
         <module name="hf_hqb_manager_services" />
+        <module name="Hqb_mybatis_generator" />
         <module name="Hqb_PayServices" />
       </profile>
     </annotationProcessing>

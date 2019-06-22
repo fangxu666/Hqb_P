@@ -1,0 +1,108 @@
+body,html{
+  		height: 100%;
+  		min-width: 1000px;
+  		color: #fffff;
+  	}
+  	.logo{
+  		
+      height: 70px;
+      width: 100%;
+      background-color: #fff;
+  	}
+  	.logo span{
+	    left: 30px;
+      position: absolute;
+      height: 60px;
+      width: 110px;
+      top: 0px;
+  	}
+  	.logo img{
+  		 position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  	}
+  	.logo .logo_txt{
+          position: absolute;
+      left: 150px;
+      top: 18px;
+      font-size: 26px;
+      width: 185px;
+    }
+  	.write{
+  		color: #FFFFFF;
+  	}
+  	.layui-form-item{
+  		margin-bottom: 30px;
+  	}
+   .layui-form-item{
+   		padding: 0px 20px 0 0;
+   		margin-left: -85px;
+   }
+   #layui-form,#layui-form2{
+     /* box-shadow: 6px 6px 15px #666;*/
+      height: 400px;
+      width: 320px;
+      /*background-color:rgba(255,255,255,0.4);*/
+     background-color:rgba(41,63,123,0.4);
+      border-radius: 50px;
+      padding: 10px;
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #FFFFFF;
+   }
+   .alignRight{
+    text-align: right;
+   }
+   .alignRight a{
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: underline;
+   }
+   .alignRight a.forgetPassword{
+    float: left;
+    text-decoration: none;
+   }
+   #mpanel1{
+    margin-left: 110px;
+  }
+  .verify-bar-area .verify-msg{
+    text-indent: 2em;
+  }
+  .mobileLogin{
+    margin-left: 110px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .mobileLogin img{
+    width: 12px;
+    height: auto;
+    vertical-align: -2px;
+    margin-right: 5px;
+  }
+  .mobileLoginContent .yzmBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .mobileLoginContent  #mpanel2{
+    margin-left: 110px;
+  } 
+  .returnArrow{
+    position: absolute;
+    left: 30px;
+    top: 71px;
+    color: #fff;
+  }
+  .returnArrow:hover{
+    color: #fff;
+  }
+  .returnArrow img{
+    width: 24px;
+    margin-right: 3px;
+  }
