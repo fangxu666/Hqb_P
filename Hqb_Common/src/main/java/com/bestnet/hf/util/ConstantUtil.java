@@ -10,6 +10,9 @@ package com.bestnet.hf.util;
  * */
 public class ConstantUtil {
 
+    //分割标识
+    public static final String SYS_SPLIT_FLAG = "|";
+
     /********************  阿里云发送短信常量  *********************/
     //产品名称:云通信短信API产品,开发者无需替换
     public static final String SEND_MOBILEINFO_PRODUCT = "Dysmsapi";

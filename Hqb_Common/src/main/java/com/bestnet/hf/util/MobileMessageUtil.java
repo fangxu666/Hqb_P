@@ -18,17 +18,24 @@ import com.aliyuncs.profile.IClientProfile;
  * */
 public class MobileMessageUtil {
 
+
+    public static SendSmsResponse sendSms(String telephone, String codeType) throws ClientException {
+        return sendSms(telephone,codeType,null);
+    }
     /**
      * 说明：发送短信
      *
      * 参数：
      * @param telephone ： 手机号
      * @param codeType ：获取验证码类型，用于取不同的模板 0：登录  1：忘记密码
+     * @param code：验证码
      *
      * */
-    public static SendSmsResponse sendSms(String telephone, String codeType) throws ClientException {
+    public static SendSmsResponse sendSms(String telephone, String codeType,String code) throws ClientException {
         //验证码
-        String code = String.valueOf((int)(Math.random()*9999)+100);
+        if(StringUtil.isEmpty(code)){
+            code = String.valueOf((int)(Math.random()*9999)+100);
+        }
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");

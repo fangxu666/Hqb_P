@@ -47,13 +47,13 @@ public class StringUtil {
      *
      * @param src
      *            源字符串
-     * @return true：不为空
+     * @return true：为空
      */
-    public static boolean hasContent(String src) {
+    public static boolean isEmpty(String src) {
         if (src == null || src.length() == 0 || src.equals("null")) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
